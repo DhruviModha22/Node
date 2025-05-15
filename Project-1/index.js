@@ -1,6 +1,6 @@
-let http = require("http");
-let fs = require("fs");
-let PORT = 8080;
+const http = require("http");
+const fs = require("fs");
+const PORT = 8080;
 
 http
   .createServer((req, res) => {
@@ -23,13 +23,13 @@ http
 
     fs.readFile(filename, (err, data) => {
       if (err) {
-        res.writeHead(500);
-        res.end("Server Error");
+        res.write("Server Error");
+        res.end();
         return;
       }
 
-      res.writeHead(200);
-      res.end(data);
+      res.write(data);
+      res.end();
     });
   })
   .listen(PORT, () => {
