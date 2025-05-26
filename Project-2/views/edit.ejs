@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Taskt</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <h1>Edit Task</h1>
+  <form action="/update/<%= task.id %>" method="POST">
+    <input type="text" name="updatedTask" value="<%= task.task %>" required />
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

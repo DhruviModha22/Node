@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo CRUD</title>
+   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    form.add-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      transition: background 0.3s ease;
+    }
+
+    li:hover {
+      background-color: #f1f1f1;
+    }
+
+    .task-text {
+      flex: 1;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .actions a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #007bff;
+    }
+
+    .actions a:hover {
+      text-decoration: underline;
+    }
+
+    .actions form {
+      margin: 0;
+    }
+
+    .actions button {
+      background-color: #e74c3c;
+    }
+
+    .actions button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+
+</head>
+<body>
+   <div class="container">
+    <h1>📝 My ToDo List</h1>
+
+    <form class="add-form" action="/add" method="POST">
+      <input type="text" name="newTask" placeholder="Enter a new task..." required />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul>
+      <% todoList.forEach(task => { %>
+        <li>
+          <span class="task-text"><%= task.task %></span>
+          <div class="actions">
+            <a href="/edit/<%= task.id %>"><button>Edit</button></a>
+            <form action="/delete/<%= task.id %>" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
