@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Our Platform</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Platform</h1>
+    </header>
+    <nav>
+        <a href="/about">About</a>
+        <a href="/features">Features</a>
+    </nav>
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Transform Your Digital Experience</h2>
+                <p class="hero-text">Discover the power of modern technology with our innovative solutions</p>
+                <a href="/features" class="btn btn-primary">Explore Features</a>
+            </div>
+        </section>
+
+        <section class="user-info-section">
+            <h2>Personalized Dashboard</h2>
+            <div class="user-cards">
+                <div class="user-card">
+                    <div class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Profile</h3>
+                    <p><%= userData.userName %></p>
+                </div>
+                <div class="user-card">
+                    <div class="user-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Age</h3>
+                    <p><%= userData.age %></p>
+                </div>
+                <div class="user-card">
+                    <div class="user-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p><%= userData.city %></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of satisfied users who have transformed their digital experience</p>
+                <a href="/features" class="btn btn-primary">Start Now</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
