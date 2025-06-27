@@ -1,0 +1,12 @@
+<h2>Profile</h2>
+<p><strong>Username:</strong> <%= user.username %></p>
+<h3>Your Blogs</h3>
+<% if (blogs.length === 0) { %>
+    <p>You have not written any blogs yet.</p>
+<% } else { %>
+    <ul>
+        <% blogs.forEach(blog => { %>
+            <li><a href="/blog/<%= blog._id %>"><%= blog.title %></a></li>
+        <% }) %>
+    </ul>
+<% } %> 

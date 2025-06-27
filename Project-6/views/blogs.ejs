@@ -1,0 +1,12 @@
+<h2>All Blogs</h2>
+<% if (blogs.length === 0) { %>
+    <p>No blogs yet.</p>
+<% } else { %>
+    <ul>
+        <% blogs.forEach(blog => { %>
+            <li>
+                <a href="/blog/<%= blog._id %>"><%= blog.title %></a> by <%= blog.author.username %>
+            </li>
+        <% }) %>
+    </ul>
+<% } %> 
